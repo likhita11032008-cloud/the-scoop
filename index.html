@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width,initial-scale=1.0">
+    <title> Surprise</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px;
+        overflow-x: hidden;
+        background:
+            radial-gradient(
+                ellipse at 50% 15%,
+                #342a18 0%,
+                #151515 42%,
+                #050505 100%
+            );
+        color: #f1d38a;
+        font-family: Georgia, serif;
+    }
+
+    .birthday-card {
+        position: relative;
+        width: 100%;
+        max-width: 680px;
+        padding: 55px 30px;
+        text-align: center;
+        border: 1px solid #947337;
+        border-radius: 4px;
+        background: #0a0a0a;
+        box-shadow: 0 0 50px #c9a64618;
+        animation: entrance 1.5s ease-out both;
+    }
+
+    .eyebrow {
+        color: #c9a646;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        letter-spacing: 5px;
+        margin-bottom: 30px;
+    }
+
+    h1 {
+        font-size: clamp(36px, 8vw, 66px);
+        line-height: 1.15;
+        margin-bottom: 22px;
+        text-shadow: 0 0 25px #d4af5744;
+    }
+
+    p {
+        color: #c9c2b2;
+        line-height: 2.2;
+        margin-bottom: 30px;
+    }
+
+    .gold-button {
+        display: inline-block;
+        padding: 14px 24px;
+        border: 1px solid #d4af57;
+        color: #f1d38a;
+        background: #17130b;
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: 0.3s;
+    }
+
+    .gold-button:hover {
+        color: #080808;
+        background: #d4af57;
+        box-shadow: 0 0 25px #d4af5755;
+        transform: translateY(-3px);
+    }
+
+    #message {
+        margin-top: 45px;
+        padding-top: 25px;
+        border-top: 1px solid #94733766;
+    }
+
+    @keyframes entrance {
+        from {
+            opacity: 0;
+            transform: translateY(22px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .birthday-card {
+            padding: 40px 20px;
+        }
+
+        .eyebrow {
+            letter-spacing: 3px;
+        }
+    }
+    /* Birthday cake scene */
+.cake-scene {
+    margin-top: 35px;
+    padding: 30px 15px;
+    border-top: 1px solid #94733766;
+    text-align: center;
+}
+
+.cake-scene h2 {
+    color: #f1d38a;
+    margin-bottom: 15px;
+}
+
+.cake-scene p {
+    color: #c9c2b2;
+    line-height: 1.8;
+}
+
+.cake {
+    font-size: 100px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 20px 0;
+    filter: drop-shadow(0 0 15px #d4af5755);
+    transition: transform 0.3s;
+}
+
+.cake:hover {
+    transform: scale(1.08);
+}
+/* Batman-inspired Bat-Signal effect */
+.cake.burst {
+    animation: batSignal 1.2s ease-in-out;
+}
+
+@keyframes batSignal {
+    0% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px #d4af57);
+    }
+
+    35% {
+        transform: scale(1.2);
+        filter:
+            drop-shadow(0 0 25px #f5d77a)
+            drop-shadow(0 0 55px #d4af57);
+    }
+
+    65% {
+        transform: scale(1.1) rotate(-3deg);
+        filter: drop-shadow(0 0 40px #ffe7a0);
+    }
+
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 15px #d4af5755);
+    }
+}
+
+/* Bat-Signal spotlight */
+.bat-signal {
+    font-size: 54px;
+    color: #f5d77a;
+    text-shadow:
+        0 0 10px #ffe9a8,
+        0 0 30px #d4af57,
+        0 0 60px #d4af57;
+    animation: signalGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes signalGlow {
+    from {
+        opacity: 0.65;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+.cake-sparks {
+    color: #ffd76a;
+    font-size: 25px;
+    letter-spacing: 8px;
+    min-height: 35px;
+}
+
+.candle-note {
+    color: #c7d457;
+    font-size: 14px;
+}
+/* Premium memory timeline */
+.memory-scene {
+    margin-top: 40px;
+    padding: 35px 18px;
+    border-top: 1px solid #d4af57;
+    text-align: center;
+    overflow: hidden;
+}
+
+.memory-label {
+    color: #d4af57;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.memory-scene h2 {
+    color: #f5d77a;
+    margin: 18px 0;
+}
+
+.memory-intro {
+    color: #c9c2b2;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.memory-timeline {
+    max-width: 620px;
+    margin: auto;
+}
+
+.memory-item {
+    margin: 0 auto 55px;
+    padding: 18px;
+    border: 1px solid #d4af5744;
+    border-radius: 14px;
+    background: linear-gradient(
+        145deg,
+        #171717,
+        #080808
+    );
+    box-shadow: 0 8px 28px #0008;
+    animation: memoryPop 0.8s ease both;
+}
+
+.memory-year {
+    color: #d4af57;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.memory-photo {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: #050505;
+    border-radius: 10px;
+    border: 1px solid #d4af5780;
+    box-shadow: 0 0 18px #d4af5720;
+    transition: transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.memory-photo:hover {
+    transform: scale(1.035);
+    box-shadow: 0 0 28px #d4af5770;
+}
+
+.memory-item h3 {
+    color: #f5d77a;
+    margin: 18px 0 8px;
+}
+
+.memory-caption {
+    color: #d5d0c5;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.memory-ending {
+    color: #f5d77a;
+    line-height: 1.9;
+    margin: 35px auto;
+    font-style: italic;
+}
+
+@keyframes memoryPop {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    .memory-scene {
+        padding: 25px 10px;
+    }
+
+    .memory-item {
+        padding: 12px;
+        margin-bottom: 35px;
+    }
+
+    .memory-photo {
+        height: 260px;
+    }
+}
+/* Photos reveal individually while scrolling */
+.memory-item {
+    margin: 0 auto 55px;
+    padding: 18px;
+    border: 1px solid #d4af5744;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #171717, #080808);
+    box-shadow: 0 8px 28px #0008;
+
+    opacity: 0;
+    transform: translateY(60px) scale(0.85);
+    transition:
+        opacity 1s ease,
+        transform 1s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+.memory-item.show-memory {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+/* Scene 4: Secret letter */
+.letter-scene {
+    margin-top: 40px;
+    padding: 35px 18px;
+    border-top: 1px solid #d4af5780;
+    text-align: center;
+}
+
+.letter-label {
+    color: #d4af57;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+.letter-scene h2 {
+    color: #f5d77a;
+    margin: 18px 0;
+}
+
+.letter-intro {
+    color: #c9c2b2;
+    line-height: 1.8;
+    margin-bottom: 28px;
+}
+
+.envelope-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: min(100%, 330px);
+    margin: 25px auto;
+    padding: 30px 20px;
+    color: #f5d77a;
+    background: linear-gradient(145deg, #242016, #090909);
+    border: 1px solid #d4af57;
+    border-radius: 14px;
+    box-shadow: 0 0 24px #d4af5720;
+    cursor: pointer;
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.envelope-button:hover {
+    transform: translateY(-5px) scale(1.025);
+    box-shadow: 0 0 35px #d4af5760;
+}
+
+.envelope-button:focus-visible {
+    outline: 2px solid #ffe7a0;
+    outline-offset: 5px;
+}
+
+.envelope-icon {
+    display: block;
+    font-size: 78px;
+    filter: drop-shadow(0 0 12px #d4af5770);
+    animation: envelopeFloat 2s ease-in-out infinite;
+}
+
+.envelope-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.envelope-hint {
+    color: #c9c2b2;
+    font-size: 13px;
+}
+
+@keyframes envelopeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* Letter appearance */
+.secret-letter {
+    max-width: 620px;
+    margin: 30px auto;
+    padding: 28px 24px;
+    text-align: left;
+    line-height: 1.95;
+    color: #e9e0cd;
+    background: linear-gradient(145deg, #19160f, #080808);
+    border: 1px solid #d4af5780;
+    border-radius: 12px;
+    box-shadow: 0 0 35px #d4af5720;
+}
+
+.secret-letter h3,
+.letter-greeting {
+    color: #f5d77a;
+    font-weight: bold;
+}
+
+.letter-signoff {
+    margin-top: 28px;
+    color: #f5d77a;
+    font-style: italic;
+}
+
+@keyframes letterReveal {
+    from {
+        opacity: 0;
+        transform: translateY(22px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.secret-letter.letter-open {
+    animation: letterReveal 0.8s ease both;
+}
+
+@media (max-width: 600px) {
+    .letter-scene {
+        padding: 25px 10px;
+    }
+
+    .secret-letter {
+        padding: 22px 17px;
+    }
+}
+/* GOTHAM SECURITY SCREEN */
+
+#securityScreen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    background:
+        radial-gradient(circle at center,
+        #1b2940 0%, #090e19 55%, #03060c 100%);
+}
+
+/* Main security card */
+
+.security-card {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    padding: 55px 30px 45px;
+    text-align: center;
+
+    background: linear-gradient(
+        145deg, #111b2c, #080d18
+    );
+
+    border: 2px solid #c99b50;
+    border-radius: 18px;
+
+    box-shadow:
+        0 0 15px #c99b5040,
+        0 0 45px #c99b5020,
+        inset 0 0 25px #c99b5010;
+}
+
+/* Inner border */
+
+.security-card::before {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    border: 1px solid #c99b5066;
+    border-radius: 11px;
+    pointer-events: none;
+}
+
+/* Decorative corners */
+
+.corner {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-color: #e9c477;
+    border-style: solid;
+}
+
+.top-left {
+    top: 14px;
+    left: 14px;
+    border-width: 2px 0 0 2px;
+}
+
+.top-right {
+    top: 14px;
+    right: 14px;
+    border-width: 2px 2px 0 0;
+}
+
+.bottom-left {
+    bottom: 14px;
+    left: 14px;
+    border-width: 0 0 2px 2px;
+}
+
+.bottom-right {
+    bottom: 14px;
+    right: 14px;
+    border-width: 0 2px 2px 0;
+}
+
+/* Bat symbol */
+
+.bat-icon {
+    font-size: 58px;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 0 12px #d6ad60);
+}
+
+/* Heading */
+
+.security-card h1 {
+    color: #f5d18b;
+    font-size: 29px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 12px #bd914a;
+}
+
+.security-card .subtitle {
+    color: #c5b99f;
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 28px;
+}
+
+/* Divider */
+
+.security-divider {
+    width: 140px;
+    height: 1px;
+    margin: 22px auto;
+    background: linear-gradient(
+        to right, transparent, #e9c477, transparent
+    );
+}
+
+/* Password input */
+
+#passwordInput {
+    width: 100%;
+    padding: 15px;
+    margin: 12px 0;
+    outline: none;
+
+    background: #080e19;
+    color: #f5d18b;
+
+    border: 1px solid #b88a45;
+    border-radius: 8px;
+
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 3px;
+}
+
+#passwordInput:focus {
+    border-color: #ffe0a0;
+    box-shadow: 0 0 15px #d6ad6055;
+}
+
+/* Unlock button */
+
+.security-card button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 15px;
+
+    background: linear-gradient(
+        135deg, #f5d18b, #b88646
+    );
+
+    color: #101522;
+    border: 1px solid #ffe5ae;
+    border-radius: 8px;
+
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.security-card button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px #d6ad6080;
+}
+
+#accessMessage {
+    min-height: 20px;
+    margin-top: 15px;
+    color: #ff9292;
+    font-size: 13px;
+}
+
+.security-footer {
+    margin-top: 25px;
+    color: #9b927f;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 480px) {
+    .security-card {
+        padding: 48px 22px;
+    }
+
+    .security-card h1 {
+        font-size: 23px;
+    }
+}
+</style>
+</head>
+
+<body>
+    <div id="securityScreen">
+
+    <div class="security-card">
+
+        <div class="corner top-left"></div>
+        <div class="corner top-right"></div>
+        <div class="corner bottom-left"></div>
+        <div class="corner bottom-right"></div>
+
+        <div class="bat-icon">🦇</div>
+
+        <h1>GOTHAM CITY</h1>
+
+        <div class="subtitle">
+            CLASSIFIED SECURITY ACCESS
+        </div>
+
+        <div class="security-divider"></div>
+
+        <p class="subtitle">
+            A SPECIAL MISSION AWAITS YOU
+        </p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="ENTER SECRET PASSWORD"
+            autocomplete="off"
+        >
+
+        <button onclick="unlockGotham()">
+            🦇 &nbsp; UNLOCK
+        </button>
+
+        <div id="accessMessage"></div>
+
+        <div class="security-divider"></div>
+
+        <div class="security-footer">
+            AUTHORIZED ACCESS ONLY
+            <br><br>
+            GOTHAM SECURITY SYSTEM © 2026
+        </div>
+
+    </div>
+
+</div>
+    <main class="birthday-card">
+
+        <div class="eyebrow">
+            GOTHAM CITY • 12:00 AM
+        </div>
+
+        <h1>Happyyy Birthdayyyy VARUNNNNN!</h1>
+
+        <p>
+            Some legends are born in the dark.
+            Tonight, the city celebrates you.
+        </p>
+
+        <button class="gold-button" id="beginButton">
+            Begin Your Mission
+        </button>
+
+        <section id="message"hidden>
+            <h2>A Message Just for You</h2>
+            <p>
+                You make ordinary days unforgettable.
+                Here's to another legendary year!
+            </p>
+        </section>
+    <!-- Scene 2: Birthday cake -->
+        <section id="cakeScene" class="cake-scene" hidden>
+
+            <h2>The Birthday Ritual</h2>
+
+             <p>
+            Even the darkest night deserves a little light.
+              Make a wish, legend.
+             </p>
+
+    <div id="cake" class="cake"
+         role="button" tabindex="0"
+         aria-label="Click the birthday cake to make a wish">
+        🎂
+    </div>
+
+    <div id="sparks" class="bat-signal" hidden>
+    🦇
+    </div>
+
+    <p id="cakeNote" class="candle-note">
+        Tap the cake to make your birthday wish ✨
+    </p>
+
+    <button id="nextMission" class="gold-button" hidden>
+        Continue to Memories →
+    </button>
+
+</section>
+<!-- Scene 3: Cinematic Memory Timeline -->
+<section id="memoryScene" class="memory-scene" hidden>
+
+    <p class="memory-label">A JOURNEY THROUGH TIME</p>
+
+    <h2>From Little Dreams to Big Legends</h2>
+
+    <p class="memory-intro">
+        Every picture holds a story.
+        Every year made you who you are today.
+    </p>
+
+    <div class="memory-timeline">
+
+        <!-- Childhood -->
+        <article class="memory-item">
+            <div class="memory-year">THE BEGINNING</div>
+
+            <img src="images/childhood1.jpg"
+                 alt="Childhood memory 1"
+                 class="memory-photo">
+
+            <h3> The Little Legend</h3>
+            <p class="memory-caption">
+                Every legend has a beginning. ✨
+            </p>
+        </article>
+
+        <article class="memory-item">
+            <div class="memory-year">ANOTHER LITTLE MEMORY</div>
+
+            <img src="images/childhood2.jpg"
+                 alt="Childhood memory 2"
+                 class="memory-photo">
+
+            <h3>Little Moments, Big Smiles</h3>
+            <p class="memory-caption">
+                The days were small, but the memories were priceless.
+            </p>
+        </article>
+
+        <!-- Growing years -->
+        <article class="memory-item">
+            <div class="memory-year">THE GROWING YEARS</div>
+
+            <img src="images/growing1.jpg"
+                 alt="Growing years memory 1"
+                 class="memory-photo">
+
+            <h3>Chapter Two</h3>
+            <p class="memory-caption">
+                A little older, a little chaos.
+            </p>
+        </article>
+
+        <article class="memory-item">
+            <div class="memory-year">MEMORY IN MOTION</div>
+
+            <img src="images/growing2.jpg"
+                 alt="Growing years memory 2"
+                 class="memory-photo">
+
+            <h3>Unforgettable Days</h3>
+            <p class="memory-caption">
+                Some days pass. Some stay with us forever.
+            </p>
+        </article>
+
+        <article class="memory-item">
+            <div class="memory-year">MORE THAN A MEMORY</div>
+
+            <img src="images/growing3.jpg"
+                 alt="Growing years memory 3"
+                 class="memory-photo">
+
+            <h3>Making His Story</h3>
+            <p class="memory-caption">
+                Every little moment became part of your story.
+            </p>
+        </article>
+
+        <article class="memory-item">
+            <div class="memory-year">THE NEXT CHAPTER</div>
+
+            <img src="images/growing4.jpg"
+                 alt="Growing years memory 4"
+                 class="memory-photo">
+
+            <h3>Growing Into Greatness</h3>
+            <p class="memory-caption">
+                But actions are funny enough.
+            </p>
+        </article>
+
+        <article class="memory-item">
+            <div class="memory-year">ALMOST THERE</div>
+
+            <img src="images/growing5.jpg"
+                 alt="Growing years memory 5"
+                 class="memory-photo">
+
+            <h3>SITCOM</h3>
+            <p class="memory-caption">
+                the first funniness version of you.
+            </p>
+        </article>
+
+        <!-- Today -->
+        <article class="memory-item">
+            <div class="memory-year">THE LEGEND TODAY</div>
+
+            <img src="images/today1.jpg"
+                 alt="Recent memory 1"
+                 class="memory-photo">
+
+            <h3>Look at You Now</h3>
+            <p class="memory-caption">
+                From those little days to the person you are today.
+            </p>
+        </article>
+
+        <article class="memory-item">
+            <div class="memory-year">THE PRESENT CHAPTER</div>
+
+            <img src="images/today2.jpg"
+                 alt="Recent memory 2"
+                 class="memory-photo">
+
+            <h3>Your Own Kind of Magic</h3>
+            <p class="memory-caption">
+                There is only one you, and that makes everything special.
+            </p>
+        </article>
+
+        <article class="memory-item">
+            <div class="memory-year">THE STORY CONTINUES</div>
+
+            <img src="images/today3.jpg"
+                 alt="Recent memory 3"
+                 class="memory-photo">
+
+            <h3>To Be Continued...</h3>
+            <p class="memory-caption">
+                Your best chapters are still waiting to be written. 🖤
+            </p>
+        </article>
+
+    </div>
+
+    <p class="memory-ending">
+        Some moments become memories.
+        Some memories become forever. ✨
+        We dont have that many memories but we have lot of fun together and we have a lot of fun and memories to make in future.
+    </p>
+    <h2>WISHING YOU A HAPPIEST BIRTHDAY VARUN!</h2>
+</section>
+<!-- Scene 4: Secret Birthday Letter -->
+<section id="letterScene" class="letter-scene" hidden>
+
+    <p class="letter-label">ONE LAST THING...</p>
+
+    <h2>A Little Something From My Heart.
+        KEEP IT SECRETTT!</h2>
+
+    <p class="letter-intro">
+        Some words are too special to leave unsaid.
+    </p>
+
+    <!-- Clickable golden envelope -->
+    <button
+        id="envelopeButton"
+        class="envelope-button"
+        type="button"
+        aria-label="Open your secret birthday letter"
+        aria-expanded="false"
+        aria-controls="secretLetter">
+
+        <span class="envelope-icon">💌</span>
+
+        <span class="envelope-text">
+            A letter, just for you
+        </span>
+
+        <span class="envelope-hint">
+            Click to open ✨
+        </span>
+
+    </button>
+
+    <!-- Hidden letter -->
+    <article id="secretLetter" class="secret-letter" hidden>
+
+        <p class="letter-greeting">To someone truly special,</p>
+
+        <p>
+            Happy Birthday! 🖤
+            Happy Birthday to the person who unknowingly became one of the most important parts of my life.❤️🥹 
+        </p>
+        <p>
+            On June 20, 2022, you sent me your first message, and little did I know that a simple message would turn into such a beautiful bond. 🫂💗 Today, you’re not just my best friend; you’re the person I share my thoughts, emotions, happiness, and pain with without any fear. 🥺❤️ Thank you for being my safe place, for listening to my endless stories, and for being someone I can always be myself with. 🫶🏻✨ No matter how much life changes or how far we go, a special part of my heart will always hold our memories close.Having you in my life is a gift I’ll always be grateful. 🎂❤️
+        </p>
+        <p>
+            As you step into another year, I hope life brings
+            you the happiness you deserve, the courage to chase
+            your biggest dreams, and the strength to get through
+            every difficult day.
+        </p>
+
+        <p>
+            No matter how much life changes, I hope you never
+            forget how much potential you carry and how many
+            wonderful things are still waiting for you.
+        </p>
+
+        <p>
+            Keep smiling, keep growing, and keep being yourself.
+        </p>
+
+        <p class="letter-signoff">
+            With lots of care and warm wishes,<br>
+            Someone who wishes the best for you ✨
+        </p>
+
+    </article>
+
+</section>
+ </main>
+<script>
+    function unlockGotham() {
+
+    const enteredPassword =
+        document.getElementById("passwordInput").value;
+
+    if (enteredPassword === "varun081107") {
+
+        document.getElementById("securityScreen").style.display =
+            "none";
+
+    } else {
+
+        document.getElementById("accessMessage").textContent =
+            "Access Denied! Try again, Gotham visitor.";
+
+    }
+}
+    const button = document.getElementById("beginButton");
+    const message = document.getElementById("message");
+    const cakeScene = document.getElementById("cakeScene");
+    const cake = document.getElementById("cake");
+    const sparks = document.getElementById("sparks");
+    const cakeNote = document.getElementById("cakeNote");
+    const nextMission = document.getElementById("nextMission");
+
+    // Scene 1: Begin the birthday experience
+    button.addEventListener("click", function () {
+        message.hidden = false;
+        button.textContent = "Mission Started";
+        button.disabled = true;
+
+        const oldButton = document.getElementById("beginButton");
+        oldButton.scrollIntoView({ behavior: "smooth" });
+
+        // Add the next-scene button to the message
+        const nextButton = document.createElement("button");
+        nextButton.className = "gold-button";
+        nextButton.textContent = "Reveal the Cake 🎂";
+
+        message.appendChild(nextButton);
+
+        nextButton.addEventListener("click", function () {
+            cakeScene.hidden = false;
+            cakeScene.scrollIntoView({ behavior: "smooth" });
+            nextButton.disabled = true;
+            nextButton.textContent = "Cake Scene Unlocked ✓";
+        });
+    });
+
+    // Scene 2: Cake click and golden energy burst
+    function celebrateCake() {
+        if (cake.dataset.clicked === "true") return;
+
+        cake.dataset.clicked = "true";
+        cake.classList.remove("burst");
+
+        // Restart the animation
+        void cake.offsetWidth;
+        cake.classList.add("burst");
+        sparks.hidden = false;
+        sparks.textContent = "✦ ✧ 🦇 ✧ ✦";
+        cakeNote.textContent =
+            "Wish made! Another legendary year begins!";
+
+        nextMission.hidden = false;
+    }
+
+    cake.addEventListener("click", celebrateCake);
+
+    cake.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            celebrateCake();
+        }
+    });
+
+    const memoryScene = document.getElementById("memoryScene");
+
+// Open the photo gallery when the button is clicked
+nextMission.addEventListener("click", function () {
+    memoryScene.hidden = false;
+
+    memoryScene.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    nextMission.textContent = "Memories Mission Unlocked ✓";
+    nextMission.disabled = true;
+});
+const memoryItems = document.querySelectorAll(".memory-item");
+
+const memoryObserver = new IntersectionObserver(
+    function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show-memory");
+                memoryObserver.unobserve(entry.target);
+            }
+        });
+    },
+    {
+        threshold: 0.1
+    }
+);
+
+memoryItems.forEach(function (item, index) {
+    item.style.transitionDelay = (index * 0.08) + "s";
+    memoryObserver.observe(item);
+});
+nextMission.addEventListener("click", function () {
+    memoryScene.hidden = false;
+
+    memoryScene.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    nextMission.textContent = "Memories Mission Unlocked ✓";
+    nextMission.disabled = true;
+
+    // Add a button after the memories timeline
+    const letterButton = document.createElement("button");
+    letterButton.className = "gold-button";
+    letterButton.textContent = "Open Your Secret Letter 💌";
+
+    memoryScene.appendChild(letterButton);
+
+    letterButton.addEventListener("click", function () {
+        letterScene.hidden = false;
+
+        letterScene.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        letterButton.textContent = "Secret Letter Unlocked ✓";
+        letterButton.disabled = true;
+    });
+});
+const letterScene = document.getElementById("letterScene");
+const envelopeButton = document.getElementById("envelopeButton");
+const secretLetter = document.getElementById("secretLetter");
+
+envelopeButton.addEventListener("click", function () {
+    secretLetter.hidden = false;
+    secretLetter.classList.add("letter-open");
+
+    envelopeButton.setAttribute("aria-expanded", "true");
+    envelopeButton.querySelector(".envelope-text").textContent =
+        "Your letter is open 🖤";
+
+    envelopeButton.querySelector(".envelope-hint").textContent =
+        "A message from the heart";
+
+    envelopeButton.disabled = true;
+});
+</script>
+</body>
+</html>
